@@ -1,5 +1,5 @@
 
-all: files0 files1 dup0 envs 
+all: files0 files1 dup0  
 
 
 files0: files0.c
@@ -12,10 +12,7 @@ files1: files1.c
 dup0: dup0.c
 	gcc -o dup0 -Wall dup0.c
 
-
-envs: envs.c
-	gcc -o envs -Wall envs.c
 	
 clean:
-	rm -rf files0 files1 dup0  envs 
+	rm -rf files0 files1 dup0   
 
