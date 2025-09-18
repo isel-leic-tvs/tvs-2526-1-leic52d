@@ -3,8 +3,16 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
+/**
+ * This program opens the same file twice,
+ * first open done via fopen and second via open,
+ * writing from the two obtained descriptors.
+ * Observe the result.
+ */
+
+ 
+
 int main() {
-   // mix fd and FILE output
 
    FILE *file = fopen("xpto.txt", "w+");
    if (file == NULL) {
@@ -12,24 +20,26 @@ int main() {
       exit(1);
    }
   
-   if ( fwrite("1234", 1, 4, file) != 4) {
-      perror("error writing on file");
-      exit(1);
-   }
-   
-   // use file output via fd
-   int fd = open("xpto.txt", O_WRONLY | O_CREAT, 0644);
-   if (fd ==  -1) {
-       perror("error creating file via fd");
-      exit(1);
-   }
-   
-   if (write(fd, "56789", 5) != 5) {
-      perror("error writing on file");
+   if (fwrite("1234", 1, 4, file) != 4) {
+      perror("error writing on file via fwrite");
       exit(1);
    }
 
+      
+   // access file via open
+   int fd = open("xpto.txt", O_WRONLY);
+   if (fd == -1) {
+      perror("error opening file via open");
+      exit(1);
+   }
+
+   
+   if (write(fd, "56789", 5) != 5) {
+      perror("error writing on file via write");
+      exit(1);
+   }
    fclose(file);
+  
    close(fd);
 
    return 0;
