@@ -28,14 +28,18 @@ int main() {
 	else if (pchild == 0) { // child process code
 		char msg[128];
 	 
+		close(p[0]);
 		sprintf(msg, "hello from child %d", getpid());
 		write(p[1], msg, strlen(msg)+1);
+		close(p[1]);
 		exit(0);
 	}
 	else { // parent code
 		#define MAX_MSG 128
 		char msg[MAX_MSG];
         
+		// must close pipe output fd
+		close(p[1]);
 	
 		int nr;
 		int total = 0;
@@ -49,7 +53,7 @@ int main() {
 
 	 		
 		waitpid(pchild, NULL, 0);
-		 
+		close(p[0]);
 		printf("father received: '%s'\n", msg);
 	}
 	return 0;

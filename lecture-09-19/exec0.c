@@ -27,7 +27,7 @@ int main() {
 	
 	// exec cat without parameters
     
-	if (execlp("cat1", "cat", NULL) == -1) {
+	if (execlp("cat", "cat", NULL) == -1) {
 		perror("error on exec");
 		exit(1);
 	};

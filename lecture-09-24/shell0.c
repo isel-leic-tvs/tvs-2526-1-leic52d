@@ -29,9 +29,16 @@ int main(int argc, char *argv[]) {
 		exit(1);
 	}
 	else if (child_pid == 0) {
-	   // exec command
+		// child process
+		if (execvp(argv[1], &argv[1]) == -1) {
+			perror2("can't exec program %d«s\n", argv[1]);
+		}
+		exit(1);
+	   	// exec command
 	}
 	else {
+		// parent process
+		printf("child process id: %d\n", child_pid);
 		waitpid(child_pid, NULL, 0);
 	}
 	
