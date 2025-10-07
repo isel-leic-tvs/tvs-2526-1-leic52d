@@ -19,7 +19,7 @@ jmp_buf env;
 
 void sig_handler(int sig) {
     printf("SIGSEV caught!\n");
-    exit(1);
+    //exit(1);
 }
 
 

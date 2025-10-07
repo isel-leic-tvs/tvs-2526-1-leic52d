@@ -10,16 +10,19 @@
 
 void sigint_handler(int s) {
     printf("SIGINT caught at process %d\n", getpid());
+    exit(0);
 }
  
 
 int main(int argc, char *argv[]) {
-    signal(SIGINT, sigint_handler);
+    //signal(SIGINT, SIG_IGN);
     
     printf("on parent process is %d\n", getpid());
    
     if (fork() == 0) {
-         printf("on child  process %d, press enter to terminate... ", getpid());
+         signal(SIGINT, sigint_handler);
+         printf("on child  process %d\n", getpid());
+         printf("Waiting for input...");
          getchar();
          printf("child  process %d, terminating\n", getpid());
          exit(0);

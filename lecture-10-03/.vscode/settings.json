@@ -1,0 +1,14 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-03",
+            "binaryPath": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-03/tst_scall",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-03",
+            "binaryPath": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-03/scall_demo",
+            "binaryArgs": []
+        }
+    ]
+}
