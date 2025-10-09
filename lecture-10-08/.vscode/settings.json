@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-08",
+            "binaryPath": "/home/isel/src/tvs/25-26/tvs-2526-1-leic52d/lecture-10-08/scallint_demo",
+            "binaryArgs": []
+        }
+    ]
+}

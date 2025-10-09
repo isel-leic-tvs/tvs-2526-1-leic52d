@@ -16,7 +16,7 @@ int main()
 {
     char msg[] = "hello again!\n";
  
-	int res = my_write(100, msg, 13);
+	int res = my_write(STDOUT_FILENO, msg, 13);
 	printf("return of my_write is %d\n", res);
 
 	 
