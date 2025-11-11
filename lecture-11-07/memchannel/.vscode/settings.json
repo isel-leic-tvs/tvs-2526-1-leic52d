@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdatomic.h": "c",
+        "string.h": "c",
+        "chrono": "c",
+        "time.h": "c"
+    }
+}
