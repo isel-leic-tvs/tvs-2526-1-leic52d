@@ -1,0 +1,9 @@
+# this unit is used for automatically stop test.target
+# and all of it's dependencies since all have Conflicts clausules with stop.target
+#this is the method used by systemd to automatically stop all target dependencies
+#on system shutdown
+#this is possible since systemd automatically add Conflict clausules to shutdown.target 
+#on all anabled units
+
+[Unit]
+Description=Stop Target
